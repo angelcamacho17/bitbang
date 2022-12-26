@@ -7,6 +7,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { AbstractContainerComponent } from './components/abstract-container/abstract-container.component';
 import { PunkBackgroundComponent } from './components/punk-background/punk-background.component';
 import { CubeComponent } from './components/cube/cube.component';
+import { InfiteComponent } from './components/infite/infite.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CubeComponent } from './components/cube/cube.component';
     LandingComponent,
     AbstractContainerComponent,
     PunkBackgroundComponent,
-    CubeComponent
+    CubeComponent,
+    InfiteComponent
   ],
   imports: [
     BrowserModule,

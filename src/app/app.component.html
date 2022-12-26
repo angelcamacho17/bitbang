@@ -1,3 +1,16 @@
-<bb-landing>
-  
+<!-- Rounded switch -->
+<button class="switch front" *ngIf="!threeJs" (click)="switched()">
+ Switch to 3D
+</button>
+
+<button class="switch front" *ngIf="threeJs" (click)="switched()">
+  Switch to 2D
+</button>
+
+<bb-landing  *ngIf="!threeJs">
+
 </bb-landing>
+
+<bb-infite *ngIf="threeJs">
+
+</bb-infite>
