@@ -1,0 +1,32 @@
+@import '../../../scss/colors';
+
+.mission {
+    position: relative;
+    height: 400px;
+    padding: 10px 84px;
+}
+
+h1 {
+    margin: 18px 0;
+}
+
+.title {
+    top: 20px;
+    position: absolute;
+    font-family: 'Recoleta';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 82px;
+    text-align: center;
+    color: $white;
+}
+
+.book-now-link {
+    font-family: 'Montserrat-bold';
+    font-style: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: $white;
+}

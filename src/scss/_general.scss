@@ -1,0 +1,33 @@
+.full-page {
+    position: relative;
+    display: block;
+    height: 100vh;
+    width: 100vw;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-flow: column;
+}
+
+.centered {
+    justify-content: center;
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+
+.space-around {
+    justify-content: space-around;
+}
+
+.front {
+    z-index: 1000;
+}

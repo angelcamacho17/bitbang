@@ -1,0 +1,15 @@
+@import '../../../scss/colors';
+
+:host {
+    display: contents;
+}
+
+.container {
+    position: relative;
+    background: $dark-blue;
+    height: fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 400px;
+    box-sizing: border-box;
+}
