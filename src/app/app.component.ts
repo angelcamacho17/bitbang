@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bitbang';
-  threeJs = false;
+  threeJs = true;
 
   switched() {
     console.log('here')
