@@ -14,48 +14,49 @@ a {
 }
 
 .element {
-  width: 120px;
-  height: 160px;
-  box-shadow: 0px 0px 12px rgba(0,255,255,0.5);
-  border: 1px solid rgba(127,255,255,0.25);
+  width: fit-content;
+  height: fit-content;
+  box-shadow: 0px 0px 12px rgba(255,255,255,0.6);
+  border: none;
+  border-radius: 40px;
+  padding: 140px 50px;
   font-family: Helvetica, sans-serif;
   text-align: center;
   line-height: normal;
   cursor: default;
+  background: rgba(255,255,255,0.2);
 }
 
 .element:hover {
-  box-shadow: 0px 0px 12px rgba(0,255,255,0.75);
-  border: 1px solid rgba(127,255,255,0.75);
+  box-shadow: 0px 0px 12px rgba(255,255,255,0.87);
+  border: 1px solid rgba(255,255,255,0.75);
 }
 
   .element .number {
-    position: absolute;
+    position: relative;
     top: 20px;
     right: 20px;
     font-size: 12px;
-    color: rgba(127,255,255,0.75);
+    color: rgba(255, 255, 255, 0.75);
   }
 
   .element .symbol {
-    position: absolute;
-    top: 40px;
+    position: relative;
     left: 0px;
     right: 0px;
     font-size: 60px;
     font-weight: bold;
     color: rgba(255,255,255,0.75);
-    text-shadow: 0 0 10px rgba(0,255,255,0.95);
   }
 
-  .element .details {
+  /* .element .details {
     position: absolute;
     bottom: 15px;
     left: 0px;
     right: 0px;
     font-size: 12px;
     color: rgba(127,255,255,0.75);
-  }
+  } */
 
 button {
   color: rgba(127,255,255,0.75);

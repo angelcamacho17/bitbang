@@ -7,19 +7,19 @@ import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRe
 function App() {
 
 			const table = [
-				'Hello Universe', 'BitBang', '1.00794', 1, 1,
-				'Hello Universe', 'BitBang', '4.002602', 18, 1,
-				'Hello Universe', 'BitBang', '6.941', 1, 2,
-				'Hello Universe', 'BitBang', '9.012182', 2, 2,
-				'Hello Universe', 'BitBang', '10.811', 13, 2,
-				'Hello Universe', 'BitBang', '12.0107', 14, 2,
-				'Hello Universe', 'BitBang', '14.0067', 15, 2,
-				'Hello Universe', 'BitBang', '15.9994', 16, 2,
-				'Hello Universe', 'BitBang', '18.9984032', 17, 2,
-				'Hello Universe', 'BitBang', '20.1797', 18, 2,
-				'Hello Universe', 'BitBang', '22.98976...', 1, 3,
-				'Hello Universe', 'BitBang', '24.305', 2, 3,
-				'Hello Universe', 'BitBang', '26.9815386', 13, 3,
+				'we design & build your MVP in 60 days', 'BitBang', '1.00794', 1, 1,
+				'Let your imagination roll.', 'BitBang', '4.002602', 18, 1,
+				'Hello universe', 'BitBang', '6.941', 1, 2,
+				'Focus on your investors. we create your product.', 'BitBang', '9.012182', 2, 2,
+				'You make the business, we make the magic', 'BitBang', '10.811', 13, 2,
+				'The space is the limit', 'BitBang', '12.0107', 14, 2,
+				'+15 years developing out of this world products.', 'BitBang', '14.0067', 15, 2,
+				'Build your idea Quick, and get investors quicker.', 'BitBang', '15.9994', 16, 2,
+				'Fast converting MVPs are now possible.', 'BitBang', '18.9984032', 17, 2,
+				'Think outside of the box', 'BitBang', '20.1797', 18, 2,
+				'From zero to million.', 'BitBang', '22.98976...', 1, 3,
+				'Lets talk and turn your idea into a memorable digital experience', 'BitBang', '24.305', 2, 3,
+				'It’s time to put beauty in the UI', 'BitBang', '26.9815386', 13, 3,
 				// 'Si', 'Silicon', '28.0855', 14, 3,
 				// 'P', 'Phosphorus', '30.973762', 15, 3,
 				// 'S', 'Sulfur', '32.065', 16, 3,
@@ -146,22 +146,21 @@ function App() {
 
 					const element = document.createElement( 'div' );
 					element.className = 'element';
-					element.style.backgroundColor = 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')';
 
-					const number = document.createElement( 'div' );
-					number.className = 'number';
-					number.textContent = ( i / 5 ) + 1;
-					element.appendChild( number );
+					// const number = document.createElement( 'div' );
+					// number.className = 'number';
+					// number.textContent = ( i / 5 ) + 1;
+					// element.appendChild( number );
 
 					const symbol = document.createElement( 'div' );
 					symbol.className = 'symbol';
 					symbol.textContent = table[ i ];
 					element.appendChild( symbol );
 
-					const details = document.createElement( 'div' );
-					details.className = 'details';
-					details.innerHTML = table[ i + 1 ] + '<br>' + table[ i + 2 ];
-					element.appendChild( details );
+					// const details = document.createElement( 'div' );
+					// details.className = 'details';
+					// details.innerHTML = table[ i + 1 ] + '<br>' + table[ i + 2 ];
+					// element.appendChild( details );
 
 					const objectCSS = new CSS3DObject( element );
 					objectCSS.position.x = Math.random() * 4000 - 2000;
@@ -336,8 +335,6 @@ function App() {
 
 				controls.update();
 
-        console.log('HERE UPDATE')
-
 			}
 
 			const render = () => {
@@ -366,12 +363,6 @@ function App() {
 return (
     <div className="page">
       <div id="container"></div>
-      {/* <div id="menu">
-        <button id="table">TABLE</button>
-        <button id="sphere">SPHERE</button>
-        <button id="helix">HELIX</button>
-        <button id="grid">GRID</button>
-      </div> */}
     </div>
   );
 }
