@@ -2,10 +2,17 @@ import React, { useEffect }  from 'react';
 import './App.css';
 import * as THREE from 'three';
 import { TWEEN } from 'three/examples/jsm/libs/tween.module.min'
-import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer';
 function App() {
-
+	const params = {
+		envMap: 'EXR',
+		roughness: 0.0,
+		metalness: 0.0,
+		exposure: 1.0,
+		debug: false,
+	};
+	let torusMesh, planeMesh;
 			const table = [
 				'we design & build your MVP in 60 days', 'BitBang', '1.00794', 1, 1,
 				'Let your imagination roll.', 'BitBang', '4.002602', 18, 1,
@@ -136,7 +143,7 @@ function App() {
 			const init = () => {
 
 				camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
-				camera.position.z = 3000;
+				camera.position.z = 5000;
 
 				scene = new THREE.Scene();
 
@@ -191,7 +198,7 @@ function App() {
 
 					const object = new THREE.Object3D();
 
-					object.position.setFromSphericalCoords( 800, phi, theta );
+					object.position.setFromSphericalCoords( 1200, phi, theta );
 
 					vector.copy( object.position ).multiplyScalar( 2 );
 
@@ -199,7 +206,11 @@ function App() {
 
 					targets.sphere.push( object );
 
+					
 				}
+
+				
+			
 
 				// helix
 
@@ -244,9 +255,11 @@ function App() {
 
 				//
 
-				controls = new TrackballControls( camera, renderer.domElement );
-				controls.minDistance = 1;
-				controls.maxDistance = 6000;
+				controls = new OrbitControls( camera, renderer.domElement );
+				// controls.minDistance = 1;
+				// controls.maxDistance = 100;
+				controls.minPolarAngle = 0;
+				controls.maxPolarAngle =  Math.PI * 0.5;
 				controls.addEventListener( 'change', render );
 
 				// const buttonTable = document.getElementById( 'table' );
@@ -281,6 +294,10 @@ function App() {
 
 				//
 
+				// setTimeout(()=>{
+				// 	transitionCamera(camera, 2000)
+				// }, 3000)
+
 				window.addEventListener( 'resize', onWindowResize );
 
 			}
@@ -306,14 +323,24 @@ function App() {
 
 				}
 
-        console.log('HERE IN TWEEN')
 				new TWEEN.Tween( this )
 					.to( {}, duration * 2 )
 					.onUpdate( render )
 					.start();
 
-          console.log('OVER')
 
+			}
+
+			const transitionCamera = (targets, duration) => {
+				new TWEEN.Tween( targets )
+						.to({ postion: { x: 1, y: 1, z: 1 }}, Math.random() * duration + duration )
+						.easing( TWEEN.Easing.Exponential.InOut )
+						.start();
+
+				new TWEEN.Tween( this )
+					.to( {}, duration * 2 )
+					.onUpdate( render )
+					.start();
 			}
 
 			const onWindowResize = () => {
